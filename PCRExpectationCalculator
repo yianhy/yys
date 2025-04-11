@@ -16,10 +16,10 @@ public class PCRExpectationCalculator {
     /**
      * 模拟单次抽卡过程
      * @param currentDraws 当前已抽次数（用于判断保底）
-     * @return 是否抽到SSR
+     * @return 是否抽到SSR或SP
      */
     private static boolean drawSSR(int currentDraws) {
-        // 如果达到保底次数，必定抽到SSR
+        // 如果达到保底次数，必定抽到SSR/SP
         if (currentDraws >= PITY_THRESHOLD) {
             return true;
         }
@@ -45,7 +45,7 @@ public class PCRExpectationCalculator {
     }
     
     /**
-     * 判断抽到的SSR是否为新式神
+     * 判断抽到的SSR/SP是否为新式神
      * @param totalDraws 总抽卡次数
      * @return 是否为新式神
      */
@@ -157,7 +157,7 @@ public class PCRExpectationCalculator {
     public static void main(String[] args) {
         System.out.println("抽卡期望计算程序启动...");
         System.out.println("参数设置：");
-        System.out.println("- SSR概率: " + (SSR_PROBABILITY * 100) + "%");
+        System.out.println("- SSR/SP概率: " + (SSR_PROBABILITY * 100) + "%");
         System.out.println("- 初始新式神概率: " + (INITIAL_NEW_SHIKIGAMI_PROBABILITY * 100) + "%");
         System.out.println("- 新式神概率提升机制: ");
         for (int i = 0; i < PROBABILITY_THRESHOLDS.length; i++) {
