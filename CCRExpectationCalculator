@@ -5,7 +5,7 @@
 public class CCRExpectationCalculator {
     // 常量定义
     private static final double SSR_PROBABILITY = 0.0125; // SSR/SP概率：1.25%
-    private static final double INITIAL_NEW_SHIKIGAMI_PROBABILITY = 0.03; // 初始新式神概率：3%
+    private static final double INITIAL_NEW_SHIKIGAMI_PROBABILITY = 0.15; // 初始新式神概率：15%
     private static final int PITY_THRESHOLD = 60; // 保底阈值：60次
     private static final int SIMULATION_TIMES = 1000000; // 模拟次数
     
