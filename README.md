@@ -1,6 +1,7 @@
 # yys
-阴阳师期望等数值计算
-[跳转到非全图结果](#section1)<br>[跳转到全图结果](#section2)
+阴阳师期望等数值计算<br>
+[跳转到非全图结果](#section1)<br>
+[跳转到全图结果](#section2)
 
 
 <a id="section1"></a>
