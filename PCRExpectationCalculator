@@ -2,7 +2,7 @@
  * 抽卡期望计算程序
  * 模拟抽卡系统，计算抽到新式神的期望抽数
  */
-public class CCRExpectationCalculator {
+public class PCRExpectationCalculator {
     // 常量定义
     private static final double SSR_PROBABILITY = 0.0125; // SSR/SP概率：1.25%
     private static final double INITIAL_NEW_SHIKIGAMI_PROBABILITY = 0.03; // 初始新式神概率：3%
