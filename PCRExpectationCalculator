@@ -7,11 +7,13 @@ public class PCRExpectationCalculator {
     private static final double SSR_PROBABILITY = 0.0125; // SSR/SP概率：1.25%
     private static final double INITIAL_NEW_SHIKIGAMI_PROBABILITY = 0.03; // 初始新式神概率：3%
     private static final int PITY_THRESHOLD = 60; // 保底阈值：60次
+    private static final int NEW_SHIKIGAMI_PITY_THRESHOLD = 800; // 新式神保底阈值：800次
     private static final int SIMULATION_TIMES = 1000000; // 模拟次数
     
     // 新式神概率提升阈值和对应概率
     private static final int[] PROBABILITY_THRESHOLDS = {0, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660, 720, 780};
-    private static final double[] NEW_SHIKIGAMI_PROBABILITIES = {0.03, 0.05, 0.08, 0.10, 0.15, 0.20, 0.25, 0.30, 0.40, 0.50, 0.70, 0.80, 0.90, 1.00}; // 对应概率值
+    private static final double[] NEW_SHIKIGAMI_PROBABILITIES = {0.04, 0.07, 0.11, 0.15, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00}; // 对应概率值
+; // 对应概率值
 
     /**
      * 模拟单次抽卡过程
@@ -65,6 +67,11 @@ public class PCRExpectationCalculator {
         while (true) {
             draws++;
             drawsSinceLastSSR++;
+
+            //连续799抽都没有抽到新式神，第800抽必定为新式神
+            if (draws >= NEW_SHIKIGAMI_PITY_THRESHOLD) {
+                return draws;
+            }
             
             // 判断是否抽到SSR
             if (drawSSR(drawsSinceLastSSR)) {
