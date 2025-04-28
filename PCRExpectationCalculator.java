@@ -8,7 +8,7 @@ public class PCRExpectationCalculator {
     private static final double INITIAL_NEW_SHIKIGAMI_PROBABILITY = 0.04; // 初始新式神概率：4%
     private static final int PITY_THRESHOLD = 60; // 保底阈值：60次
     private static final int NEW_SHIKIGAMI_PITY_THRESHOLD = 800; // 新式神保底阈值：800次
-    private static final int SIMULATION_TIMES = 1000000; // 模拟次数
+    private static final int SIMULATION_TIMES = 10000000; // 模拟次数
     
     // 新式神概率提升阈值和对应概率
     private static final int[] PROBABILITY_THRESHOLDS = {0, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660, 720, 780};
