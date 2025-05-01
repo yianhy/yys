@@ -152,10 +152,10 @@ public class MRFZExpectationCalculator {
         int percentile99 = calculatePercentileDraws(0.99);
 
         //计算保底的概率
-        double probability = (double) IntStream.range(1, results.length + 1)
-                .filter(i -> results[i-1] == PITY_THRESHOLD)
+        double probability = (double) (SIMULATION_TIMES - IntStream.range(1, results.length + 1)
+                .filter(i -> results[i - 1] == PITY_THRESHOLD)
                 .findFirst()
-                .orElse(-1) /SIMULATION_TIMES;
+                .orElse(-1)) /SIMULATION_TIMES;
 
         long endTime = System.currentTimeMillis();
         System.out.println("计算完成，耗时: " + (endTime - startTime) / 1000.0 + "秒");
