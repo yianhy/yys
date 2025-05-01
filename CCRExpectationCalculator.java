@@ -131,10 +131,8 @@ public class CCRExpectationCalculator {
         
         // 统计每个区间的抽数次数
         for (int result : results) {
-            if (result <= NEW_SHIKIGAMI_PITY_THRESHOLD) {
-                int interval = (result - 1) / 10; // 0-9抽归为第0区间，10-19抽归为第1区间，以此类推
-                distribution[interval]++;
-            }
+            int interval = (result - 1) / 10; // 1-9抽归为第0区间，10-19抽归为第1区间，以此类推
+            distribution[interval]++;
         }
         
         // 转换为概率（累积概率）
